@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Guess-d-Musician</title>
+ </head>
+<body>
+
+<h2>Musician guess by Rahul Reddy</h2>
+
+<form>
+    <label for="form_Musician">Enter the secret musician name</label>
+    <input type ="password" id="form_Musician" name="form_Musician" min=10 max=50 step=2 value="John Lennon"> <br>
+
+    <label for="form_guess">Guess the musician</label>
+    <input type ="text" id="form_guess" name="form_guess" autofocus> <br>
+
+    <input type="button" onclick="CheckGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">Guessing Musicians Complete.</p>
+
+<script> 
+
+let wrong = 0;
+let correct = 0;
+
+
+function CheckGuess()
+{
+    
+    console.log("Getting form values")
+    SecretName = document.getElementById("form_Musician").value
+    guess = document.getElementById("form_guess").value
+    let compare = SecretName === guess;
+    
+    out = document.getElementById("result")
+    if(compare==1){
+        alert("You got it right");
+        correct++;
+        
+    } else {
+        alert("Wrong Musician");
+        wrong++;
+       
+    }
+}
+
+</script>
+
+
+
+</body>
+</html> 
