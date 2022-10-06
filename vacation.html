@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vacation Page</title>
+    </head>
+<body>
+
+<h2>Rahul Reddy selects a Vacation</h2>
+
+<form>
+    <input type="checkbox" id="vc1" name="Vacation1"   
+      value="True" checked>
+    <label for="vc1">Travel by Air</label></br>
+  
+    <input type="checkbox" id="vc2" name="Vacation2" 
+       value="True">
+    <label for="vc2">Domestic</label></br>
+  
+    <input type="checkbox" id="vc3" name="Vacation3"   
+       value="onion" checked>
+    <label for="vc3">Resort</label></br>
+
+    <input type="button" onclick="selectVacation()" value="Select a vacation">
+  </form>
+  
+
+<p id="result">This text will be replaced </p>
+
+
+
+<script> 
+
+function selectVacation() 
+{
+            my_vacation = {}
+            Travel = document.getElementById("vc1").value
+            domestic = document.getElementById("vc2").value
+            resort = document.getElementById("vc3").value
+            
+            if (document.getElementById("vc1").checked) {
+                my_vacation.Travel = true
+            }
+            else {
+                my_vacation.Travel = false
+            }
+            if (document.getElementById("vc2").checked) {
+                my_vacation.domestic = true
+            }
+            else {
+                my_vacation.domestic = false
+            }
+            if (document.getElementById("vc3").checked) {
+                my_vacation.resort = true
+            }
+            else 
+            {
+                 my_vacation.resort = false 
+            }
+            out = document.getElementById("result")
+            out.innerHTML = JSON.stringify(my_vacation)
+}
+
+</script>
+
+
+<form>
+    <label for="form_City">Enter a city</label>
+    <input type="text" id="City" name="City" min=10 max=50 step=2 value="City"> <br>
+
+    <label for="form_Price">Enter price </label>
+    <input type="text" id="Price" name="Price" autofocus> <br>
+
+    <input type="button" class="btn btn-success" onclick="updateVacation()" value="Update the vacation">
+</form>
+
+
+
+<script>
+
+function updateVacation() {
+
+    City = document.getElementById("City").value
+    Price = document.getElementById("Price").value
+    my_vacation[City]=Price
+    out.innerHTML=JSON.stringify(my_vacation)
+}
+
+</script>
+
+</body>
+</html> 
