@@ -43,5 +43,42 @@ function discount ()
 
 </script>
 
+
+
+<form>
+    <input type="radio" id="rg1_red" name="color" value="times"     checked >
+    <label for="rg1_red">*</label></br>
+  
+    <input type="radio" id="rg1_blue" name="color" value="divide">
+    <label for="rg1_blue">/</label></br>
+  
+    <input type="radio" id="rg1_green" name="color"  value="exponent">
+    <label for="rg1_green">**</label></br>
+
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+
+<p id="result">This text will be replaced </p>
+
+
+<script>
+function chooseOp(){
+    
+    BaseAmount = document.getElementById("BaseAmount").value
+    discountPercent = document.getElementById("DiscountPercent").value
+    Radio1 = document.getElementById("rg1_red").checked
+    Radio2 = document.getElementById("rg1_blue").checked
+    Radio3 = document.getElementById("rg1_green").checked
+    out = document.getElementById("result")
+    if(Radio1==true)
+    out.innerHTML = BaseAmount*DiscountPercent
+    if(Radio2==true)
+    out.innerHTML = BaseAmount/DiscountPercent
+     if(Radio3==true)
+    out.innerHTML = BaseAmount**DiscountPercent
+}
+</script>
+
+
 </body>
 </html> 
