@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Page</title>
+</head>
+<body>
+
+<h2>Rahul Reddy computes discounts</h2>
+
+<form>
+    <label for="form_Amount">Enter base amount </label>
+    <input type ="number" id="BaseAmount" name="Amount" min=10 max=50 step=2 value=20> <br>
+
+    <label for="form_Discount">Enter the discount percentage </label>
+    <input type ="number" id="DiscountPercent" name="Discount" value=20> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let result="";
+
+function discount ()
+{
+    console.log("Getting form values")
+    BaseAmount = document.getElementById("BaseAmount").value
+    DiscountPercent = document.getElementById("DiscountPercent").value
+   
+    for(let i=1; i<6; i++)
+    {
+       result += (i* BaseAmount) -  (i* BaseAmount * (DiscountPercent/100)) + " "
+    }
+
+    out = document.getElementById("result")
+    
+    out.innerHTML = "Discounted amounts for "+BaseAmount+" are: "+ result;
+
+}
+
+</script>
+
+</body>
+</html> 
